@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build/dist",
-    "module": "esnext",
-    "target": "es5",
+    "module": "es6",
+    "target": "es6",
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
@@ -14,7 +14,6 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
-    "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
@@ -27,5 +26,8 @@
     "webpack",
     "jest",
     "src/setupTests.ts"
+  ],
+  "types": [
+    "typePatches"
   ]
 }
