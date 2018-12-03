@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import Login from "./Containers/Login";
+import RootContainer from "./Containers/RootContainer";
 
 class App extends React.Component {
   public render() {
-    return <Login />;
+    return <RootContainer />;
   }
 }
 

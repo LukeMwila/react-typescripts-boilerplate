@@ -1,12 +1,15 @@
-import React, { Fragment } from "react";
+import * as React from "react";
 import styled from "@emotion/styled";
-import PropTypes from "prop-types";
 import { Colors } from "../../Themes";
+
+interface IProps {
+  children: React.ReactNode;
+}
 
 const PanelWrapper = styled.div`
   position: fixed;
   left: 0;
-  width: 350px;
+  width: 450px;
   top: 0;
   bottom: 0;
   display: flex;
@@ -23,10 +26,8 @@ const PanelWrapper = styled.div`
     -12px 0 8px -4px rgba(0, 0, 0, 0.2);
 `;
 
-const LoginPanel = props => <PanelWrapper>{props.children}</PanelWrapper>;
-
-LoginPanel.propTypes = {
-  children: PropTypes.node.isRequired
-};
-
-export default LoginPanel;
+export default class LoginPanel extends React.Component<IProps> {
+  render() {
+    return <PanelWrapper>{this.props.children}</PanelWrapper>;
+  }
+}
