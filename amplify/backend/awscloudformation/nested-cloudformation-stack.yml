@@ -84,10 +84,10 @@
 				"TemplateURL": "https://s3.amazonaws.com/appsync-20181203152932-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "appsync",
-					"schemaGraphql": "s3://appsync-20181203152932-deployment/amplify-appsync-files/schema.graphql.1543844271009",
+					"schemaGraphql": "s3://appsync-20181203152932-deployment/amplify-appsync-files/schema.graphql.1543869570525",
 					"ResolverBucket": "appsync-20181203152932-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1543844271009",
+					"DeploymentTimestamp": "1543869570525",
 					"env": "dev"
 				}
 			}

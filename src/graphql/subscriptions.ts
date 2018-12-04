@@ -31,3 +31,36 @@ export const onDeleteUser = `subscription OnDeleteUser {
   }
 }
 `;
+export const onCreateCompany = `subscription OnCreateCompany {
+  onCreateCompany {
+    id
+    name
+    address
+    state
+    country
+    size
+  }
+}
+`;
+export const onUpdateCompany = `subscription OnUpdateCompany {
+  onUpdateCompany {
+    id
+    name
+    address
+    state
+    country
+    size
+  }
+}
+`;
+export const onDeleteCompany = `subscription OnDeleteCompany {
+  onDeleteCompany {
+    id
+    name
+    address
+    state
+    country
+    size
+  }
+}
+`;

@@ -28,3 +28,32 @@ export const listUsers = `query ListUsers(
   }
 }
 `;
+export const getCompany = `query GetCompany($id: ID!) {
+  getCompany(id: $id) {
+    id
+    name
+    address
+    state
+    country
+    size
+  }
+}
+`;
+export const listCompanys = `query ListCompanys(
+  $filter: ModelCompanyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCompanys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      address
+      state
+      country
+      size
+    }
+    nextToken
+  }
+}
+`;

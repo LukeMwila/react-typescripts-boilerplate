@@ -31,3 +31,36 @@ export const deleteUser = `mutation DeleteUser($input: DeleteUserInput!) {
   }
 }
 `;
+export const createCompany = `mutation CreateCompany($input: CreateCompanyInput!) {
+  createCompany(input: $input) {
+    id
+    name
+    address
+    state
+    country
+    size
+  }
+}
+`;
+export const updateCompany = `mutation UpdateCompany($input: UpdateCompanyInput!) {
+  updateCompany(input: $input) {
+    id
+    name
+    address
+    state
+    country
+    size
+  }
+}
+`;
+export const deleteCompany = `mutation DeleteCompany($input: DeleteCompanyInput!) {
+  deleteCompany(input: $input) {
+    id
+    name
+    address
+    state
+    country
+    size
+  }
+}
+`;
