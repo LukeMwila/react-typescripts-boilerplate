@@ -1,0 +1,176 @@
+type User {
+  id: ID!
+  firstName: String
+  lastName: String
+  email: String!
+  password: String
+}
+
+type Company {
+  id: ID!
+  name: String!
+  address: String
+  state: String
+  country: String
+  size: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelUserConnection {
+  items: [User]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelUserFilterInput {
+  id: ModelIDFilterInput
+  firstName: ModelStringFilterInput
+  lastName: ModelStringFilterInput
+  email: ModelStringFilterInput
+  password: ModelStringFilterInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+}
+
+type Query {
+  getUser(id: ID!): User
+  listUsers(filter: ModelUserFilterInput, limit: Int, nextToken: String): ModelUserConnection
+  getCompany(id: ID!): Company
+  listCompanys(filter: ModelCompanyFilterInput, limit: Int, nextToken: String): ModelCompanyConnection
+}
+
+input CreateUserInput {
+  id: ID
+  firstName: String
+  lastName: String
+  email: String!
+  password: String
+}
+
+input UpdateUserInput {
+  id: ID!
+  firstName: String
+  lastName: String
+  email: String
+  password: String
+}
+
+input DeleteUserInput {
+  id: ID
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  updateUser(input: UpdateUserInput!): User
+  deleteUser(input: DeleteUserInput!): User
+  createCompany(input: CreateCompanyInput!): Company
+  updateCompany(input: UpdateCompanyInput!): Company
+  deleteCompany(input: DeleteCompanyInput!): Company
+}
+
+type Subscription {
+  onCreateUser: User @aws_subscribe(mutations: ["createUser"])
+  onUpdateUser: User @aws_subscribe(mutations: ["updateUser"])
+  onDeleteUser: User @aws_subscribe(mutations: ["deleteUser"])
+  onCreateCompany: Company @aws_subscribe(mutations: ["createCompany"])
+  onUpdateCompany: Company @aws_subscribe(mutations: ["updateCompany"])
+  onDeleteCompany: Company @aws_subscribe(mutations: ["deleteCompany"])
+}
+
+type ModelCompanyConnection {
+  items: [Company]
+  nextToken: String
+}
+
+input ModelCompanyFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  address: ModelStringFilterInput
+  state: ModelStringFilterInput
+  country: ModelStringFilterInput
+  size: ModelStringFilterInput
+  and: [ModelCompanyFilterInput]
+  or: [ModelCompanyFilterInput]
+  not: ModelCompanyFilterInput
+}
+
+input CreateCompanyInput {
+  id: ID
+  name: String!
+  address: String
+  state: String
+  country: String
+  size: String
+}
+
+input UpdateCompanyInput {
+  id: ID!
+  name: String
+  address: String
+  state: String
+  country: String
+  size: String
+}
+
+input DeleteCompanyInput {
+  id: ID
+}
